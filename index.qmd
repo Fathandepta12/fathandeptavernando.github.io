@@ -1,0 +1,154 @@
+---
+title: "Pengaruh Ekspor Impor Terhadap Pertumbuhan Ekonomi Indonesia Pada Periode 2013-2022"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Fathan Depta Vernando 220204120"
+date: 2024-01-11
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+
+![Politeknik APP Jakarta](poltekapp.jpg)
+
+
+## Pendahuluan
+
+### Latar Belakang
+
+Pertumbuhan ekonomi suatu negara saat ini sangat terkait dengan kondisi perekonomian global. Interaksi ekonomi antar negara menjadi faktor utama dalam memastikan pertumbuhan ekonomi suatu negara. Fenomena ini menimbulkan daya saing sebagai elemen kunci dalam persaingan antarnegara untuk mendapatkan keuntungan dari globalisasi perekonomian yang semakin meluas. Keuntungan dari keterbukaan perekonomian yang meluas dapat tercermin dari kondisi neraca pembayaran suatu negara.
+
+Bank Indonesia (BI) mendefinisikan neraca pembayaran sebagai catatan transaksi ekonomi antara penduduk Indonesia dengan pihak non-residen dalam suatu periode tertentu. Suatu negara dikatakan memiliki surplus neraca pembayaran ketika terjadi kelebihan nilai ekspor dan investasi dibandingkan kewajiban yang dibayarkan kepada negara lain, sebaliknya, kondisi neraca pembayaran defisit terjadi saat impor lebih besar daripada ekspor. Neraca pembayaran yang mengalami surplus atau defisit dapat berdampak pada pertumbuhan ekonomi suatu negara.
+
+Menurut Thirlwall (1979), neraca pembayaran berperan sebagai kendala terhadap pertumbuhan output. Peningkatan produksi domestik akibat kenaikan impor dapat menyebabkan terjadinya defisit, yang dapat mengakibatkan penurunan permintaan atau melemahnya nilai tukar riil. Pertumbuhan ekonomi suatu negara akan lebih cepat jika elastisitas pendapatan ekspor lebih besar daripada impor. Hal ini dikarenakan negara tidak dapat tumbuh lebih cepat daripada tingkat pembayaran yang harus dilakukan, terutama jika rasio utang luar negeri terhadap Pertumbuhan Domestik Bruto (PDB) tinggi, yang dapat mengakibatkan kehilangan kepercayaan dari pihak internasional dan eksternal.
+
+Penelitian ini bertujuan untuk mengkaji bagaimana neraca pembayaran memengaruhi pertumbuhan ekonomi Indonesia selama 10 tahun terakhir. Fokus penelitian ini adalah pada neraca berjalan dalam Neraca Pembayaran Indonesia (NPI), khususnya dalam konteks ekspor dan impor. Melalui analisis regresi multivariat atau Ordinary Least Square (OLS), penelitian ini akan menginvestigasi pengaruh ekspor dan impor terhadap pertumbuhan ekonomi Indonesia selama masa 10 tahun terakhir. 
+
+### Ruang Lingkup
+
+Penelitian ini menginvestigasi dan menganalisis dampak ekspor dan impor terhadap pertumbuhan ekonomi selama 10 tahun terakhir. Lingkup penelitian ini mencakup variabel-variabel yang terkait dengan judul penelitian, yakni ekspor, impor, dan PDB.
+
+### Rumusan Masalah
+
+Dari tinjauan latar belakang penelitian ini, dapat diajukan beberapa permasalahan utama sebagai berikut:
+
+1. Bagaimana dampak ekspor terhadap pertumbuhan ekonomi Indonesia selama periode 10 tahun terakhir ?
+2. Bagaimana efek impor terhadap pertumbuhan ekonomi Indonesia dalam 10 tahun terakhir ?
+
+### Tujuan Penelitian dan Manfaat Penelitian
+
+Berdasarkan uraian latar belakang dan rumusan masalah penelitian ini, tujuan dan manfaat penelitian dapat dirinci sebagai berikut:
+
+1. Menyelidiki dampak ekspor terhadap pertumbuhan ekonomi Indonesia selama 10 tahun terakhir
+2. Menyelidiki efek impor terhadap pertumbuhan ekonomi Indonesia selama 10 tahun terakhir 
+
+Manfaat penelitian ini melibatkan pemahaman yang lebih baik tentang pengaruh ekspor dan impor terhadap pertumbuhan ekonomi Indonesia selama 10 tahun terakhir. Hasil penelitian ini dapat memberikan wawasan penting bagi kebijakan ekonomi dan pengambilan keputusan terkait upaya mengatasi dampak ekonomi
+
+### Package
+
+Packages yang digunakan dalam laporan ini antara lain sebagai berikut:
+
+```{r}
+setwd('C:/Tugas Metopel/Fathan Depta Vernando')
+library(tidyverse)
+library(readxl)
+library(WDI)
+```
+
+## Studi Pustaka
+
+### Pertumbuhan Ekonomi
+Menurut Sukirno (2011), pertumbuhan ekonomi dapat didefinisikan sebagai perkembangan aktivitas ekonomi suatu negara yang mengakibatkan peningkatan produksi barang dan jasa dalam masyarakat, serta meningkatnya kesejahteraan masyarakat secara umum. Oleh karena itu, pertumbuhan ekonomi dapat dianggap sebagai indikator kemajuan suatu perekonomian dari satu periode waktu ke periode waktu berikutnya. Peningkatan kemampuan suatu negara dalam menghasilkan barang dan jasa dapat terjadi melalui penambahan faktor-faktor produksi baik dari segi jumlah maupun kualitas. Investasi yang dilakukan juga dapat meningkatkan jumlah modal barang dan perkembangan teknologi. Di samping itu, pertumbuhan penduduk juga dapat memberikan kontribusi melalui peningkatan jumlah tenaga kerja yang disertai dengan peningkatan tingkat pendidikan dan keterampilan.
+
+### Ekspor
+Definisi ekspor, menurut Murni yang dikutip dalam Farina dan Husaini (2017), adalah proses pengiriman dan penjualan barang dari suatu negara ke negara lain. Lebih lanjut, ekspor dijelaskan sebagai suatu kegiatan ekonomi yang melibatkan penjualan produk domestik ke pasar internasional. Sukirno, sebagaimana disebutkan oleh Farina dan Husaini (2017), menekankan keuntungan ekspor seperti kemampuan untuk memperluas pasar, meningkatkan devisa negara, dan menciptakan lapangan kerja.
+
+### Impor
+Impor, seperti dijelaskan oleh Murni dalam Farina dan Husaini (2017), merupakan proses pembelian dan pengenalan barang dari luar negeri ke dalam negeri. Aktivitas impor, yang melibatkan pembelian produk luar negeri untuk kebutuhan konsumsi atau dijual di pasar domestik, tidak selalu dianggap negatif menurut Murni. Sebaliknya, impor juga dapat merangsang aktivitas investasi, terutama jika barang yang diimpor termasuk dalam kategori barang modal, bahan baku, atau barang setengah jadi yang diperlukan dalam sektor industri.
+
+## Metode penelitian
+
+### Data
+
+| Tahun | Nilai Ekspor | Nilai Impor |    PDB Indonesia   |
+|-------|--------------|-------------|--------------------|
+| 2013  | 182.551.754  | 186.628.631 |  8.156.497.800.000 |
+| 2014  | 176.036.194  | 178.179.340 |  8.564.866.600.000 |
+| 2015  | 150.282.258  | 142.694.804 |  8.982.517.100.000 |
+| 2016  | 144.494.206  | 135.652.914 |  9.434.613.400.000 |
+| 2017  | 168.810.637  | 156.925.150 |  9.912.928.100.000 |
+| 2018  | 180.215.036  | 188.711.246 | 10.425.851.900.000 |
+| 2019  | 167.682.996  | 171.275.737 | 10.949.155.400.000 |
+| 2020  | 163.306.490  | 141.622.127 | 10.722.999.300.000 |
+| 2021  | 231.587.887  | 195.694.490 | 11.120.077.900.000 |
+| 2022  | 291.979.103  | 237.447.057 | 11.710.397.800.000 |
+Sumber : Trade Map (https://www.trademap.org/)
+
+Penelitian ini menggunakan data hubungan antara variabel independen dan variabel lainnya, antara nilai ekspor dan impor dengan pertumbuhan ekonomi indonesia
+
+### Metode analisis
+
+Penelitian ini menerapkan pendekatan kuantitatif. Sugiyono (2018) menjelaskan bahwa metode penelitian kuantitatif didasarkan pada paradigma positivistik, di mana data penelitian berupa angka-angka yang akan diukur menggunakan statistik sebagai alat uji penghitungan. Pendekatan ini berkaitan dengan masalah yang diteliti untuk menghasilkan kesimpulan. Metode deskriptif digunakan untuk menyajikan gambaran sistematis dan faktual mengenai perkembangan setiap variabel dalam penelitian, termasuk ekspor, impor, dan pertumbuhan ekonomi Indonesia. Paket perangkat lunak yang digunakan dalam penelitian ini meliputi readxl, tidyverse, dan WDI. Selain itu, analisis regresi digunakan untuk menilai pengaruh harga ekspor dan impor terhadap pertumbuhan ekonomi Indonesia selama 10 tahun terakhir .
+
+## PEMBAHASAN
+
+### Pembahasan masalah
+
+Berikut adalah hasil dari plot x dan y, dengan x sebagai kuantitas ekpor kopi Indonesia dan y sebagai nilai (value) ekpor kopi Indonesia. maka didapatkan plot sebagai berikut :
+
+```{r}
+dat<-read_excel('latihan1.xlsx')
+library(ggplot2)
+ggplot(data=dat, aes(x=X, y=Y, s=S))+
+  geom_point(color='blue', size=3)+
+  labs(title="Tabel 1. Plot Terhadap Pertumbuhan Ekonomi Indonesia",
+       x="Nilai Ekspor",
+       y="Nilai Impor",
+       s="Pertumbuhan Ekonomi",
+       caption = "Sumber: Trade Map") +
+  theme_classic()
+```
+
+### Analisis masalah
+
+Hasil regresinya adalah :
+
+```{r}
+library(readxl)
+dat<-read_excel("latihan1.xlsx")
+reg1<-lm(X+Y~S,data=dat)
+summary(reg1)
+```
+
+Hasil estimasi Ordinary Least Squares (OLS) menggunakan model regresi multivariat menunjukkan hubungan antara variabel dependen (tingkat pertumbuhan ekonomi/GDP) dan variabel independen (ekspor dan impor). Dalam konteks ini, jumlah ekspor terlihat memiliki pengaruh positif terhadap pertumbuhan ekonomi, sementara jumlah impor memiliki pengaruh negatif.
+
+Analisis regresi terlihat bahwa nilai F sebesar 31.37 dengan probabilitas 0.1145, menunjukkan adanya pengaruh signifikan secara keseluruhan terhadap pertumbuhan ekonomi Indonesia selama 10 tahun terakhir. Koefisien determinasi (R) sebesar 28.17% menunjukkan sejauh mana variabel independen berkontribusi terhadap variasi dalam pertumbuhan ekonomi, sementara sisanya (71.83%) dipengaruhi oleh faktor-faktor lain yang tidak dimasukkan dalam penelitian.
+
+Selanjutnya, uji parsial dilakukan untuk mengevaluasi apakah variabel independen secara individu signifikan dalam memprediksi nilai variabel dependen. Hasil perhitungan menunjukkan nilai t-hitung sebesar 0.156 dengan probabilitas sebesar 0.88, yang lebih besar dari tingkat signifikansi 0.1. Dengan kata lain, secara parsial, ekspor dan impor tidak berpengaruh secara signifikan terhadap pertumbuhan ekonomi Indonesia selama periode 10 tahun terakhir.
+
+## Kesimpulan
+
+Berdasarkan hasil penelitian, dapat disimpulkan bahwa jumlah ekspor dan jumlah impor memiliki dampak signifikan terhadap pertumbuhan ekonomi. Temuan ini dapat dihubungkan dengan konsep dalam teori perdagangan internasional, di mana peningkatan jumlah ekspor menandakan adanya peningkatan permintaan dari negara lain. Hal ini mendorong peningkatan produksi dalam negeri untuk memenuhi permintaan tersebut, yang pada gilirannya dapat meningkatkan pertumbuhan ekonomi.
+
+Sebaliknya, kenaikan jumlah impor dapat diinterpretasikan sebagai peningkatan barang yang diimpor dari luar negeri. Meskipun dapat memenuhi kebutuhan dalam negeri, hal ini juga berpotensi menurunkan produktivitas industri dalam negeri, yang pada akhirnya dapat menurunkan pertumbuhan ekonomi. Oleh karena itu, untuk mendorong pertumbuhan ekonomi di Indonesia, diperlukan upaya peningkatan produksi dalam negeri.
+
+Secara keseluruhan, hasil penelitian ini memberikan kontribusi untuk memahami hubungan antara perdagangan internasional, produksi dalam negeri, dan pertumbuhan ekonomi, yang penting untuk merancang kebijakan ekonomi yang efektif.
+
+## Referensi
+
+Astuti, I. P., & Ayuningtyas, F. J. (2018). PENGARUH EKSPOR DAN IMPOR TERHADAP PERTUMBUHAN EKONOMI DI INDONESIA. Jurnal Ekonomi & Studi Pembangunan, 19(1), Article 1. https://doi.org/10.18196/jesp.19.1.3836
+
+Badan Pusat Statistik. (n.d.). Retrieved January 12, 2024, from https://www.bps.go.id/exim/
+
+ITC Trade Map. (2022). Retrieved January 12, 2024, from https://www.trademap.org/
+
+Multivariat & Dummy regression. (n.d.). Retrieved January 12, 2024, from https://www.krisna.or.id/metopel/meeting3/index.html#/title-slide
+
+Nasution, D. A. D., Erlina, E., & Muda, I. (2020). Dampak pandemi Covid-19 terhadap perekonomian Indonesia. Jurnal benefita, 5(2), 212-224.
+
+Satu Data Perdagangan. (2022). Retrieved January 12, 2024, from https://satudata.kemendag.go.id/data-informasi/perdagangan-dalam-negeri/produk-domestik-bruto
+
+Wulandari, S., & Lubis, A. S. (2019). Analisis Perkembangan Ekspor Impor Barang Ekonomi di Provinsi Sumatera Utara. Jurnal Administrasi Bisnis, 8(1), 31–36. https://doi.org/10.14710/jab.v8i1.22403
+
+Zulkipli, Z., & Muharir, M. (2021). Dampak Covid-19 Terhadap Perekonomian Indonesia. Jurnal Ilmiah Mahasiswa Ekonomi Syariah (JIMESHA), 1(1), 7-12.
